@@ -16,26 +16,44 @@ $(document).ready(function() {
     });
   });
 
-  // $('.player').click(function(){
-  //   SC.get('/tracks/293', function(track){
-  //     SC.oEmbed(track.permalink_url, document.getElementByClassName('play_container'))
-  //   })
-  // });
   $('.player').click(function(event){
     event.preventDefault();
     SC.get('/tracks/293', function(track) {
-          SC.oEmbed(track.permalink_url, document.getElementById('player'));
+          SC.oEmbed(track.permalink_url, $('#player')[0]);
         });
+  });
+
+  $('body').on('click', '.track', function(event) {
+    //if (event.metaKey || event.shiftKey) return;
+    //debugger
+    event.preventDefault();
+    var trackId = $(this).data().trackId;
+    SC.get('/tracks/'+trackId, function(track){
+      SC.oEmbed(track.permalink_url, $('#player')[0]);
+    });
   });
 
   $('.search').submit(function(event){
     event.preventDefault();
-    $('.results').empty();
-    SC.get('/tracks', { genres: $('.search input').val() }, function(tracks) {
+    $('.results').html('Loading…');
+    SC.get('/tracks', { genres: $('.genre').val() }, function(tracks) {
+      debugger
+      var nodes = [];
       $(tracks).each(function(index, track) {
-        $('.results').append($('<li></li>').html(track.title + ' - ' + track.genre));
+        var li = $('<li class="track"></li>')
+        li.attr('data-track-id', track.id);
+        var link = $('<a class="track"></a>');
+        link.attr('href', track.permalink_url);
+        link.text(track.title + ' - ' + track.genre);
+        li.append(link);
+        nodes.push(li);
       });
+      $('.results').html(nodes);
     });
   });
 
 });
+
+//genres: $('.genre').val()
+//, duration[to]: $('.duration').val()
+

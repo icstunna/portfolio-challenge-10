@@ -2,11 +2,17 @@
   <p>Login</p>
   <a class="login" href="/me">Login</a>
 
+
+  <div id="player"></div>
+
+
   <p>What kind of songs are you looking for?</p>
 
   <form class="search">
-    <p>Input a genre</p>
-    <input type="text" name="genre">
+    <p>Input a genre:</p>
+    <input class="genre" type="text" name="genre">
+    <!-- <p>Input a duration(in milliseconds)</p> -->
+    <!-- <input class="duration" type="number" name="duration"> -->
     <input type="submit" value="search">
   </form>
 
@@ -14,9 +20,6 @@
 
   </ul>
 
-  <p>Play a song</p>
-  <div class="play_container">
-    <button class="player" type="button">Play a song!</button>
-    <div id="player"></div>
-  </div>
+
+
 </div>
