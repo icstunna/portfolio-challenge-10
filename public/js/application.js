@@ -101,6 +101,18 @@ $(document).ready(function() {
       }
     });
   });
+
+  $('.upload a').click(function(event) {
+    event.preventDefault();
+    SC.connect({
+      connected: function() {
+        SC.recordUpload({
+          track: "New track",
+          sharing: "public"
+        })
+      }
+    })
+  });
 });
 
 function updateTimer(ms) {
