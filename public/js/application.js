@@ -72,8 +72,9 @@ $(document).ready(function() {
     });
   });
 
-  $('.startRecording a').click(function(event) {
+  $('.startRecording .recordCircle').click(function(event) {
     event.preventDefault();
+    $('.stopRecording').show();
     updateTimer(0);
     SC.record({
       progress: function(ms) {
@@ -102,13 +103,16 @@ $(document).ready(function() {
     });
   });
 
-  $('.upload a').click(function(event) {
+  $('.upload').submit(function(event) {
     event.preventDefault();
     SC.connect({
       connected: function() {
         SC.recordUpload({
-          track: "New_track",
-          sharing: "public"
+          track: {
+            title: $('.upload .newTrack').val(),
+            sharing: "public"
+        }
+          // sharing: "public"
         })
       }
     })

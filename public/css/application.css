@@ -21,4 +21,55 @@
 .recording {
   display: inline-block;
   width: 35%;
+  list-style-type: none;
 }
+
+.upload {
+  display: none;
+}
+
+.playBack {
+  display: none;
+}
+
+/*.startRecording a{
+  border-radius: 100px solid black;
+  background-color: red;
+}*/
+
+.circle {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  background-color: #F97683;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.startRecording a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.square {
+  height: 100px;
+  width: 100px;
+  border: 1px solid #F97683;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  background: #F97683;
+}
+
+.stopRecording {
+  display: none;
+}
+
+.stopRecording a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+
+

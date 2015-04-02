@@ -25,11 +25,33 @@
 
     <ul class="recording">
       <li><p class="time">0:00</p></li>
-      <li class="startRecording"><a href="#">Start Recording</a></li>
-      <li class="stopRecording" ><a href="#">Stop Recording</a></li>
+      <li class="startRecording">
+        <a class="recordCircle" href="#">
+          <div class="circle">
+            <p>
+              Start Recording
+            </p>
+          </div>
+        </a>
+      </li>
+      <li class="stopRecording" >
+        <a href="#">
+          <div class="square">
+            <p>Stop Recording</p>
+          </div>
+        </a>
+      </li>
       <li class="playBack"><a href="#">Play Back</a></li>
-      <li class="upload"><a href="#">Upload</a></li>
+<!--       <li class="upload"><a href="#">Upload</a></li> -->
+      <li>
+        <form class ="upload">
+          <input class="newTrack" type="text" name="track">
+          <input type="submit" value="upload track">
+        </form>
+      </li>
     </ul>
+
+
   </div>
 
 
