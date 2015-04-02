@@ -107,7 +107,7 @@ $(document).ready(function() {
     SC.connect({
       connected: function() {
         SC.recordUpload({
-          track: "New track",
+          track: "New_track",
           sharing: "public"
         })
       }
