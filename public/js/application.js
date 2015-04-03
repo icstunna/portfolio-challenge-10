@@ -1,6 +1,6 @@
 SC.initialize({
   client_id: '3c6613e009151a45089b3f0a7f94ac1b',
-  redirect_uri: 'http://localhost:9393/me'
+  redirect_uri: 'https://nameless-chamber-1755.herokuapp.com/me'
 });
 
 
