@@ -1,15 +1,14 @@
 <div class="container">
-  <p>Login</p>
-  <a class="login" href="/me">Login</a>
 
+  <div class="banner">
+    <a class="login" href="/me">Soundcloud Login / Logout</a>
 
-  <div id="player"></div>
+    <div id="player"></div>
+  </div>
 
-
-  <p>What kind of songs are you looking for?</p>
 
   <form class="search">
-    <p>Input a genre:</p>
+    <p class="genreInput">Input a genre:</p>
     <input class="genre" type="text" name="genre">
     <input type="submit" value="search">
   </form>
@@ -41,8 +40,15 @@
           </div>
         </a>
       </li>
-      <li class="playBack"><a href="#">Play Back</a></li>
-<!--       <li class="upload"><a href="#">Upload</a></li> -->
+      <li class="playBack">
+        <a href="#">
+          <div class="arrow-right">
+            <span>
+              Play Back
+            </span>
+          </div>
+        </a>
+      </li>
       <li>
         <form class ="upload">
           <input class="newTrack" type="text" name="track">
